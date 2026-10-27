@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Kimi K3.1 Pro defensive review reference architecture</title>
+<desc id="desc">Proposed architecture: authorized pull request through policy gate, secret redaction, agent orchestrator and external model gateway, isolated validation runner, human review, and audit logs. This diagram is conceptual and not a tested deployment.</desc>
+<rect width="1200" height="760" fill="#f8fafc"/>
+<text x="600" y="45" font-family="Arial,sans-serif" font-size="26" font-weight="700" text-anchor="middle" fill="#102a43">Defensive AI Code Review — Reference Architecture</text>
+<text x="600" y="73" font-family="Arial,sans-serif" font-size="15" text-anchor="middle" fill="#52687c">Conceptual design • 25 October 2026 • NOT a validated production deployment</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#38678d"/></marker></defs>
+<rect x="30" y="128" width="225" height="83" rx="12" fill="#e4effa" stroke="#3467a1" stroke-width="2"/>
+<text x="142" y="162" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#153653">Authorized Pull Request</text><text x="142" y="188" text-anchor="middle" font-family="Arial" font-size="13" fill="#153653">Permissioned test repository</text>
+<rect x="310" y="128" width="230" height="83" rx="12" fill="#e8f4e8" stroke="#3c8450" stroke-width="2"/>
+<text x="425" y="159" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1d5630">Policy &amp; Data Gate</text><text x="425" y="183" text-anchor="middle" font-family="Arial" font-size="13" fill="#1d5630">Allowlist, scope, redaction</text>
+<rect x="595" y="128" width="250" height="83" rx="12" fill="#e4effa" stroke="#3467a1" stroke-width="2"/>
+<text x="720" y="158" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#153653">Review Orchestrator</text><text x="720" y="182" text-anchor="middle" font-family="Arial" font-size="13" fill="#153653">Patch suggestions only</text>
+<path d="M255 170 H307" stroke="#38678d" stroke-width="3" marker-end="url(#arrow)"/><path d="M540 170 H592" stroke="#38678d" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="902" y="110" width="265" height="216" rx="14" fill="#fff3e5" stroke="#b76c25" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="1035" y="138" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#7a3b10">EXTERNAL TRUST BOUNDARY</text>
+<rect x="927" y="161" width="215" height="62" rx="9" fill="#fff" stroke="#b76c25"/>
+<text x="1035" y="187" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#7a3b10">Model Gateway</text><text x="1035" y="206" text-anchor="middle" font-family="Arial" font-size="12" fill="#7a3b10">Budget + rate limit + audit</text>
+<rect x="927" y="244" width="215" height="60" rx="9" fill="#fff" stroke="#b76c25"/>
+<text x="1035" y="269" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#7a3b10">Kimi K3.1 Pro API</text><text x="1035" y="287" text-anchor="middle" font-family="Arial" font-size="12" fill="#7a3b10">Hosted provider endpoint</text>
+<path d="M845 165 H924" stroke="#38678d" stroke-width="3" marker-end="url(#arrow)"/><path d="M1035 223 V241" stroke="#38678d" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="570" y="340" width="300" height="115" rx="12" fill="#f0eaff" stroke="#7954a5" stroke-width="2"/>
+<text x="720" y="373" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#4e3472">Ephemeral Isolated Runner</text>
+<text x="720" y="400" text-anchor="middle" font-family="Arial" font-size="14" fill="#4e3472">No production secrets</text><text x="720" y="423" text-anchor="middle" font-family="Arial" font-size="14" fill="#4e3472">Restricted egress • unit tests • SAST</text>
+<path d="M720 211 V337" stroke="#38678d" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="570" y="520" width="300" height="82" rx="12" fill="#e8f4e8" stroke="#3c8450" stroke-width="2"/>
+<text x="720" y="554" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1d5630">Human Security Review</text><text x="720" y="578" text-anchor="middle" font-family="Arial" font-size="13" fill="#1d5630">Existing CI and protected branches</text>
+<path d="M720 455 V517" stroke="#38678d" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="88" y="342" width="355" height="112" rx="12" fill="#e4effa" stroke="#3467a1" stroke-width="2"/>
+<text x="265" y="377" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#153653">Audit and Telemetry</text>
+<text x="265" y="404" text-anchor="middle" font-family="Arial" font-size="14" fill="#153653">Redacted prompts, model ID, tool results</text><text x="265" y="426" text-anchor="middle" font-family="Arial" font-size="14" fill="#153653">Cost, latency, reviewer outcome</text>
+<path d="M595 197 L425 339" stroke="#38678d" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<path d="M570 398 H447" stroke="#38678d" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<path d="M925 290 L870 348" stroke="#38678d" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<rect x="70" y="655" width="1060" height="62" rx="10" fill="#fff" stroke="#cbd5e1"/>
+<text x="600" y="681" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#102a43">Security principle: model output is untrusted; policy enforcement and approvals stay outside the LLM.</text>
+<text x="600" y="703" text-anchor="middle" font-family="Arial" font-size="13" fill="#52687c">Solid arrows = main flow; dashed arrows = telemetry / supporting signals (conceptual)</text>
+</svg>
