@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="720" viewBox="0 0 1380 720" role="img" aria-labelledby="title desc">
+<title id="title">Conceptual authorized AI security assessment architecture</title>
+<desc id="desc">Approved inventory and scope feed an assessment planner, isolated test runner and independent validator. Evidence leads to a remediation pull request, human approval, CI and retesting. Independent audit and kill switch govern execution.</desc>
+<rect width="1380" height="720" fill="#f6f9fc"/>
+<text x="60" y="60" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#102f47">AI Security Assessment — Proposed Reference Architecture</text>
+<text x="60" y="93" font-family="Arial,sans-serif" font-size="16" fill="#456174">Conceptual pattern, not Oracle's internal deployment or a tested implementation</text>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#3b647f"/></marker></defs>
+<g font-family="Arial,sans-serif" font-size="17" text-anchor="middle">
+<rect x="50" y="170" rx="12" width="230" height="74" fill="#dbeafa" stroke="#5e86b0"/><text x="165" y="199" fill="#102f47">Approved inventory</text><text x="165" y="221" fill="#102f47">+ signed test scope</text>
+<rect x="335" y="170" rx="12" width="220" height="74" fill="#dbeafa" stroke="#5e86b0"/><text x="445" y="198" fill="#102f47">Assessment planner</text><text x="445" y="222" fill="#102f47">+ policy gate</text>
+<rect x="615" y="170" rx="12" width="220" height="74" fill="#ffeac8" stroke="#c78d30"/><text x="725" y="198" fill="#533900">Isolated test runner</text><text x="725" y="222" fill="#533900">ephemeral identity</text>
+<rect x="895" y="170" rx="12" width="215" height="74" fill="#dff5e5" stroke="#57a578"/><text x="1002" y="199" fill="#173f2d">Independent</text><text x="1002" y="222" fill="#173f2d">validation</text>
+<rect x="1160" y="170" rx="12" width="165" height="74" fill="#dff5e5" stroke="#57a578"/><text x="1242" y="199" fill="#173f2d">Evidence</text><text x="1242" y="222" fill="#173f2d">+ triage</text>
+<rect x="50" y="370" rx="12" width="230" height="74" fill="#e9e3fb" stroke="#8d79c1"/><text x="165" y="398" fill="#3d3166">Proposed fix</text><text x="165" y="422" fill="#3d3166">as pull request</text>
+<rect x="335" y="370" rx="12" width="220" height="74" fill="#e9e3fb" stroke="#8d79c1"/><text x="445" y="398" fill="#3d3166">Verified human</text><text x="445" y="422" fill="#3d3166">approval</text>
+<rect x="615" y="370" rx="12" width="220" height="74" fill="#e9e3fb" stroke="#8d79c1"/><text x="725" y="398" fill="#3d3166">CI + controlled</text><text x="725" y="422" fill="#3d3166">deployment</text>
+<rect x="895" y="370" rx="12" width="215" height="74" fill="#e9e3fb" stroke="#8d79c1"/><text x="1002" y="398" fill="#3d3166">Retest + rollback</text><text x="1002" y="422" fill="#3d3166">verification</text>
+<rect x="335" y="570" rx="12" width="500" height="84" fill="#fce0e2" stroke="#c36a70" stroke-width="2"/><text x="585" y="601" fill="#6a2029" font-weight="700">Independent audit + emergency stop</text><text x="585" y="629" fill="#6a2029">out-of-band logs • egress denial • credential revoke</text>
+</g>
+<g fill="none" stroke="#3b647f" stroke-width="3" marker-end="url(#arr)">
+<path d="M280 207 H335"/><path d="M555 207 H615"/><path d="M835 207 H895"/><path d="M1110 207 H1160"/>
+<path d="M1242 244 V310 H165 V370"/><path d="M280 407 H335"/><path d="M555 407 H615"/><path d="M835 407 H895"/>
+</g>
+<g fill="none" stroke="#c36a70" stroke-width="2.5" stroke-dasharray="8 7"><path d="M585 570 V510 H725 V444"/><path d="M585 570 V495 H725 V244"/></g>
+<text x="60" y="691" font-family="Arial,sans-serif" font-size="14" fill="#506879">Security decisions and product integration details require customer-specific validation.</text>
+</svg>
