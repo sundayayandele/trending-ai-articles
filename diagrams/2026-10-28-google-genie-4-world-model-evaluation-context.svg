@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="700" viewBox="0 0 1380 700" role="img" aria-labelledby="title desc">
+<title id="title">World-model evaluation reference architecture</title>
+<desc id="desc">A scenario specification and agent under test feed a controller and interchangeable simulator. Observations and actions flow to an independent evaluator and quality gate; a separate safety monitor audits all runs.</desc>
+<rect width="1380" height="700" fill="#f7fafc"/>
+<text x="60" y="62" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#15354d">World-Model Evaluation — Proposed Reference Architecture</text>
+<text x="60" y="95" font-family="Arial,sans-serif" font-size="16" fill="#50697d">Conceptual independent harness • not a Genie 4 API integration or Google internal design</text>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#466f8b"/></marker></defs>
+<g font-family="Arial,sans-serif" font-size="17" text-anchor="middle">
+<rect x="50" y="170" width="230" height="78" rx="12" fill="#dceefa" stroke="#5487ac"/><text x="165" y="199" fill="#15354d">Versioned scenario</text><text x="165" y="224" fill="#15354d">+ task constraints</text>
+<rect x="50" y="305" width="230" height="78" rx="12" fill="#dceefa" stroke="#5487ac"/><text x="165" y="334" fill="#15354d">Agent under test</text><text x="165" y="359" fill="#15354d">+ actions</text>
+<rect x="350" y="230" width="245" height="90" rx="12" fill="#ffe7c4" stroke="#c99546"/><text x="472" y="265" fill="#5b3c09">Controller + external</text><text x="472" y="290" fill="#5b3c09">policy enforcement</text>
+<rect x="665" y="230" width="260" height="90" rx="12" fill="#e9e0fb" stroke="#9275be"/><text x="795" y="260" fill="#4a336c">Provider adapter</text><text x="795" y="284" fill="#4a336c">deterministic / generative</text><text x="795" y="305" fill="#4a336c" font-size="14">preview access not assumed</text>
+<rect x="995" y="230" width="325" height="90" rx="12" fill="#dff5e5" stroke="#63a881"/><text x="1157" y="262" fill="#17412b">Independent evaluator</text><text x="1157" y="287" fill="#17412b">physics • state • task • safety</text>
+<rect x="995" y="420" width="325" height="84" rx="12" fill="#dff5e5" stroke="#63a881"/><text x="1157" y="452" fill="#17412b">Quality gate</text><text x="1157" y="479" fill="#17412b">retain / reject / investigate</text>
+<rect x="350" y="515" width="575" height="90" rx="12" fill="#fce2e2" stroke="#c87676"/><text x="638" y="548" fill="#6e2c2c" font-weight="700">Safety monitor + provenance store</text><text x="638" y="577" fill="#6e2c2c">audit • source rights • trace • stop control</text>
+</g>
+<g fill="none" stroke="#466f8b" stroke-width="3" marker-end="url(#a)">
+<path d="M280 210 H315 V255 H350"/><path d="M280 344 H315 V295 H350"/><path d="M595 275 H665"/><path d="M925 275 H995"/><path d="M1157 320 V420"/>
+</g>
+<g fill="none" stroke="#c87676" stroke-width="2.5" stroke-dasharray="8 7"><path d="M638 515 V410 H472 V320"/><path d="M795 320 V515"/></g>
+<text x="60" y="665" font-family="Arial,sans-serif" font-size="14" fill="#50697d">Do not treat visual fidelity as validated physical accuracy or safety-critical certification.</text>
+</svg>
