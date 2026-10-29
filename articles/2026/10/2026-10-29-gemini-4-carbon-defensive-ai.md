@@ -48,7 +48,7 @@ The third question is an infrastructure and governance problem. Even a strong mo
 
 The following is a **conceptual design**, not Google's internal Carbon deployment and not a tested implementation.
 
-\`\`\`mermaid
+```mermaid
 flowchart LR
   A["Approved repository snapshot"] --> B["Read-only analysis workspace"]
   B --> C["AI reviewer / model adapter"]
@@ -62,7 +62,7 @@ flowchart LR
   J -.-> E
   J -.-> G
   K["Secrets / production systems"] -. "No direct model access" .- C
-\`\`\`
+```
 
 **Separate diagram:** [Defensive evaluation context](../../../diagrams/2026-10-29-gemini-4-carbon-defensive-ai-context.svg)  
 **Design decisions:** [Architecture decision record](../../../architecture/2026-10-29-gemini-4-carbon-defensive-ai-design-decisions.md)
@@ -89,7 +89,7 @@ This lab can be prepared now using a **small synthetic repository** that you own
 
 **Example evidence record** (illustrative schema, not model output):
 
-\`\`\`json
+```json
 {
   "case_id": "toy-007",
   "source_commit": "<immutable-commit-sha>",
@@ -100,7 +100,7 @@ This lab can be prepared now using a **small synthetic repository** that you own
   "security_review": "pending",
   "approved_for_merge": false
 }
-\`\`\`
+```
 
 This schema deliberately defaults to **unverified**, **not-run**, and **false**. Do not allow model-generated evidence to replace independently recorded CI results.
 
@@ -123,7 +123,7 @@ This article does **not** claim access to Carbon, reproduction of Google's bench
 ## YouTube production brief
 
 **Recommended title:** **Google Gemini 4 Carbon Is #1 in Cybersecurity? Here's What the Benchmarks REALLY Mean**  
-**Thumbnail:** \`AI SECURITY #1?\` / \`PROVE IT\`  
+**Thumbnail:** `AI SECURITY #1?` / `PROVE IT`  
 **Opening hook:** "Google just announced a model that scores 88.2% at finding benchmark vulnerabilities. But does that mean it can safely fix your production code? Today we separate the claims from the controls you actually need."  
 **Audience:** SOC analysts, AppSec leads, DevSecOps engineers, cloud architects, security-conscious AI developers.  
 **Differentiation:** Focus on the benchmark-to-production gap and a repeatable evaluation design rather than another launch recap.  
