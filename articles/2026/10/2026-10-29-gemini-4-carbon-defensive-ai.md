@@ -26,6 +26,8 @@ Google positions Carbon as the successor to Gemini 4 Argon, announced roughly tw
 | Internal secure-code generation | More than 2x success rate versus Argon | Google's internal evaluation | Vendor-reported, not an independent field study |
 | Internal unsupported claims | Approximately halved versus Argon | Google's internal evaluation | Depends on test design and prompt distribution |
 
+**Independent leaderboard caveat (checked 29 October):** The publicly visible SEC-bench Pro leaderboard snapshot inspected for this article did **not** list Gemini 4 Carbon's claimed 88.2% result. The figure is therefore presented as **Google-reported**, not independently reproduced or confirmed from the public leaderboard. Different task snapshots, harnesses, budgets or disclosure rules may explain discrepancies; no explanation is assumed here. The CWE-bench site identifies a newly updated v1 benchmark and private held-out tasks, so task-level independent reproduction may be restricted. [1][3][5]
+
 Google states that some cyber benchmarks were evaluated **without guardrails**. Production behavior with access controls and safety restrictions may differ. It also reports internal improvements in reducing shortcut-seeking and unsupported claims; these are **vendor claims**, not guarantees of model honesty or operational safety. [1]
 
 ### Availability and cost are not the same as launch-day access
@@ -135,10 +137,10 @@ This article does **not** claim access to Carbon, reproduction of Google's bench
 1. Google, **Introducing Gemini 4 Carbon**, 28 October 2026: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/
 2. Artificial Analysis, **Intelligence Index** (live methodology/leaderboard): https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index
 3. SEC-bench Pro, official project: https://sec-bench.github.io/
-4. ExploitGym, official project linked by Google: https://github.com/ExploitGym/ExploitGym
+4. ExploitGym, official project linked by Google: https://github.com/sunblaze-ucb/exploitgym
 5. CWE-bench, benchmark project: https://cwe-bench.com/
 6. Google DeepMind, **Fairwind Program** (linked from Google's launch): https://deepmind.google/
 7. OWASP, **LLM Top 10**: https://genai.owasp.org/llm-top-10/
 8. NIST, **AI Risk Management Framework**: https://www.nist.gov/itl/ai-risk-management-framework
 
-*Editorial note: verify the exact ExploitGym repository destination before publication if Google's primary link changes; the benchmark name and result are sourced to Google's announcement. All architecture and test procedures are independent proposals.*
+*Editorial note: The ExploitGym repository URL above was verified against Google's launch link. The SEC-bench Pro public leaderboard did not independently corroborate the vendor-reported Carbon score in the snapshot checked on 29 October. All architecture and test procedures are independent proposals.*
