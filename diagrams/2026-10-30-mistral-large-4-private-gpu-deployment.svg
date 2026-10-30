@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="800" viewBox="0 0 1380 800" role="img" aria-labelledby="title desc">
+<title id="title">Proposed deployment topology for Mistral Large 4</title>
+<desc id="desc">A private Kubernetes or virtual-machine deployment with gateway, inference GPU pool, model registry, isolated tools, observability and explicit optional external hosted API boundary. GPU quantities are not specified because sizing requires measurement.</desc>
+<defs>
+<marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 1 L9 5 L0 9" fill="none" stroke="#546579" stroke-width="1.7"/></marker>
+<style>
+.t{font:700 32px Arial,sans-serif;fill:#1a3146}
+.h{font:700 19px Arial,sans-serif;fill:#214257}
+.b{font:15px Arial,sans-serif;fill:#345469}
+.s{font:13px Arial,sans-serif;fill:#586f81}
+.z{fill:#eef5fb;stroke:#a7c0d5;stroke-width:2}
+.k{fill:#e8f5ee;stroke:#7db3a0;stroke-width:2}
+.c{fill:#fff;stroke:#8da6b8;stroke-width:2}
+.w{fill:#fff4df;stroke:#d7ac61;stroke-width:2}
+.l{stroke:#546579;stroke-width:2.5;fill:none;marker-end:url(#a)}
+.d{stroke:#bc8a3c;stroke-width:2.5;stroke-dasharray:8 6;fill:none;marker-end:url(#a)}
+</style>
+</defs>
+<rect width="1380" height="800" fill="#f8fbfe"/>
+<text x="55" y="62" class="t">Mistral Large 4 — Proposed Deployment Topology</text>
+<text x="55" y="93" class="s">Illustrative infrastructure only • no GPU SKU, count, cost or production test asserted</text>
+<rect x="46" y="132" width="1288" height="590" rx="22" class="z"/>
+<text x="74" y="172" class="h">Enterprise private network / approved region</text>
+<rect x="80" y="220" width="255" height="122" rx="14" class="c"/>
+<text x="207" y="258" class="h" text-anchor="middle">Ingress gateway</text>
+<text x="207" y="286" class="b" text-anchor="middle">TLS • OIDC • policy</text>
+<text x="207" y="314" class="s" text-anchor="middle">Rate limit • classify</text>
+<rect x="407" y="202" width="510" height="310" rx="18" class="k"/>
+<text x="432" y="240" class="h">Dedicated inference node pool</text>
+<text x="432" y="268" class="s">Kubernetes GPU workers or equivalent private VMs</text>
+<rect x="445" y="303" width="205" height="138" rx="14" class="c"/>
+<text x="547" y="340" class="h" text-anchor="middle">Model serving</text>
+<text x="547" y="368" class="b" text-anchor="middle">vLLM / SGLang</text>
+<text x="547" y="396" class="s" text-anchor="middle">Pinned checkpoint</text>
+<text x="547" y="419" class="s" text-anchor="middle">Auth via gateway</text>
+<rect x="679" y="303" width="205" height="138" rx="14" class="c"/>
+<text x="781" y="340" class="h" text-anchor="middle">GPU resources</text>
+<text x="781" y="368" class="b" text-anchor="middle">FP8 / NVFP4</text>
+<text x="781" y="396" class="s" text-anchor="middle">Memory measured</text>
+<text x="781" y="419" class="s" text-anchor="middle">Context capped</text>
+<path d="M335 281 L443 351" class="l"/>
+<path d="M650 370 L677 370" class="l"/>
+<rect x="972" y="214" width="309" height="124" rx="14" class="c"/>
+<text x="1126" y="250" class="h" text-anchor="middle">Model artifact store</text>
+<text x="1126" y="279" class="b" text-anchor="middle">Revision • hash • license</text>
+<text x="1126" y="307" class="s" text-anchor="middle">Restricted pull access</text>
+<path d="M972 278 L916 278 L916 329 L886 329" class="l"/>
+<rect x="972" y="405" width="309" height="122" rx="14" class="c"/>
+<text x="1126" y="444" class="h" text-anchor="middle">Isolated tool executor</text>
+<text x="1126" y="471" class="b" text-anchor="middle">Ephemeral sandbox</text>
+<text x="1126" y="497" class="s" text-anchor="middle">No prod writes • egress deny</text>
+<path d="M884 404 L970 458" class="l"/>
+<rect x="405" y="576" width="510" height="110" rx="14" class="c"/>
+<text x="660" y="615" class="h" text-anchor="middle">Observability &amp; security events</text>
+<text x="660" y="645" class="b" text-anchor="middle">Redacted traces • metrics • alerts</text>
+<path d="M547 441 L547 573" class="l"/>
+<path d="M1126 527 L1126 632 L918 632" class="l"/>
+<rect x="80" y="554" width="255" height="130" rx="14" class="w"/>
+<text x="207" y="590" class="h" text-anchor="middle">External API fallback</text>
+<text x="207" y="618" class="b" text-anchor="middle">Disabled for restricted data</text>
+<text x="207" y="644" class="s" text-anchor="middle">Explicit approval required</text>
+<path d="M207 342 L207 551" class="d"/>
+<text x="57" y="760" class="s">Security note: inference servers and GPU nodes remain private. Access to data and tools is enforced outside the model.</text>
+</svg>

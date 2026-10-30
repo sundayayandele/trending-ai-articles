@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+<title id="title">Proposed Mistral Large 4 sovereign inference architecture</title>
+<desc id="desc">Authenticated users access a classification-aware API gateway. The gateway routes approved requests to private vLLM or SGLang GPU serving or to an explicitly permitted hosted API. Model artifacts are pinned, tools are isolated, and logs are redacted. Conceptual design only.</desc>
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1,1 L9,5 L1,9 z" fill="#56657a"/></marker>
+  <style>
+    .title{font:700 34px 'DejaVu Sans',Arial,sans-serif;fill:#15283c}
+    .sub{font:16px 'DejaVu Sans',Arial,sans-serif;fill:#53687b}
+    .head{font:700 19px 'DejaVu Sans',Arial,sans-serif;fill:#203b50}
+    .body{font:15px 'DejaVu Sans',Arial,sans-serif;fill:#2d4b61}
+    .small{font:13px 'DejaVu Sans',Arial,sans-serif;fill:#50647b}
+    .line{stroke:#56657a;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    .dash{stroke:#a37b39;stroke-width:2.5;stroke-dasharray:9 7;fill:none;marker-end:url(#arrow)}
+    .box{fill:#fff;stroke:#7e9aaf;stroke-width:2;rx:15}
+    .secure{fill:#eef8f4;stroke:#3d8e7b;stroke-width:2;rx:15}
+    .policy{fill:#f0f5ff;stroke:#4b75bd;stroke-width:2;rx:15}
+    .external{fill:#fff7e8;stroke:#d3a14b;stroke-width:2;rx:15}
+  </style>
+</defs>
+<rect width="1440" height="900" fill="#f7fafc"/>
+<text x="65" y="72" class="title">Mistral Large 4 — Sovereign Inference</text>
+<text x="65" y="105" class="sub">Proposed reference architecture • 30 Oct 2026 • NOT a deployed or tested system</text>
+<rect x="54" y="145" width="280" height="570" rx="24" fill="#e9f0f8" stroke="#c0d2e4" stroke-width="2"/>
+<text x="76" y="182" class="head">User / identity zone</text>
+<rect x="82" y="220" width="224" height="115" class="box"/>
+<text x="194" y="260" class="head" text-anchor="middle">Developers &amp;</text>
+<text x="194" y="287" class="head" text-anchor="middle">SOC analysts</text>
+<text x="194" y="311" class="small" text-anchor="middle">Authorized workloads only</text>
+<rect x="82" y="417" width="224" height="104" class="policy"/>
+<text x="194" y="455" class="head" text-anchor="middle">Enterprise IdP</text>
+<text x="194" y="480" class="body" text-anchor="middle">OIDC / SSO</text>
+<path d="M194 335 L194 414" class="line"/>
+<rect x="372" y="145" width="425" height="570" rx="24" fill="#e9f5f3" stroke="#b5d9d0" stroke-width="2"/>
+<text x="395" y="182" class="head">Control plane • private</text>
+<rect x="406" y="236" width="350" height="120" class="policy"/>
+<text x="581" y="277" class="head" text-anchor="middle">Authenticated API gateway</text>
+<text x="581" y="305" class="body" text-anchor="middle">Authorization • quotas • redaction</text>
+<text x="581" y="329" class="small" text-anchor="middle">Private ingress only</text>
+<rect x="406" y="428" width="350" height="118" class="secure"/>
+<text x="581" y="468" class="head" text-anchor="middle">Data classification router</text>
+<text x="581" y="496" class="body" text-anchor="middle">Private by default</text>
+<text x="581" y="520" class="small" text-anchor="middle">Hosted fallback requires approval</text>
+<path d="M306 468 L355 468 L355 295 L404 295" class="line"/>
+<path d="M581 356 L581 426" class="line"/>
+<rect x="844" y="145" width="540" height="570" rx="24" fill="#f1f5fa" stroke="#bdcad8" stroke-width="2"/>
+<text x="866" y="182" class="head">Execution plane • controlled</text>
+<rect x="878" y="218" width="462" height="116" class="secure"/>
+<text x="1109" y="258" class="head" text-anchor="middle">Private model serving</text>
+<text x="1109" y="286" class="body" text-anchor="middle">vLLM / SGLang • GPU cluster</text>
+<text x="1109" y="309" class="small" text-anchor="middle">Pinned FP8 or Blackwell NVFP4 checkpoint</text>
+<rect x="878" y="398" width="220" height="120" class="box"/>
+<text x="988" y="438" class="head" text-anchor="middle">Model registry</text>
+<text x="988" y="465" class="body" text-anchor="middle">Hashes • revisions</text>
+<text x="988" y="490" class="small" text-anchor="middle">License &amp; provenance</text>
+<rect x="1121" y="398" width="219" height="120" class="box"/>
+<text x="1230" y="438" class="head" text-anchor="middle">Tool sandbox</text>
+<text x="1230" y="465" class="body" text-anchor="middle">Scoped credentials</text>
+<text x="1230" y="490" class="small" text-anchor="middle">No production writes</text>
+<rect x="878" y="583" width="462" height="95" class="policy"/>
+<text x="1109" y="621" class="head" text-anchor="middle">Redacted audit &amp; observability</text>
+<text x="1109" y="650" class="body" text-anchor="middle">Request IDs • metrics • alerts</text>
+<path d="M756 485 L812 485 L812 276 L876 276" class="line"/>
+<path d="M988 398 L988 336" class="line"/>
+<path d="M1230 335 L1230 396" class="line"/>
+<path d="M1109 336 L1109 580" class="line"/>
+<rect x="380" y="763" width="1050" height="103" rx="18" fill="#fff8e9" stroke="#d8ae62" stroke-width="2"/>
+<text x="408" y="799" class="head">Optional external boundary — only for explicitly approved data</text>
+<text x="408" y="831" class="body">Hosted Mistral API • no automatic fallback for restricted prompts or code</text>
+<path d="M581 546 L581 744 L580 760" class="dash"/>
+<text x="74" y="795" class="small">Solid = controlled path</text>
+<text x="74" y="822" class="small">Dashed = conditional</text>
+<text x="74" y="849" class="small">All controls proposed</text>
+</svg>
