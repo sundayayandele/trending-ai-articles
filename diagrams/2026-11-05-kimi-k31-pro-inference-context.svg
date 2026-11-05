@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Proposed Kimi K3.1 Pro enterprise inference architecture">
+<rect width="1200" height="520" fill="#f7f9fc"/><text x="50" y="52" font-family="Arial" font-size="26" font-weight="bold" fill="#15243b">Kimi K3.1 Pro — proposed inference architecture (not deployed)</text>
+<g font-family="Arial" font-size="17" text-anchor="middle" fill="#15243b">
+<rect x="45" y="160" width="175" height="90" rx="12" fill="#dce8fa" stroke="#6482b4"/><text x="132" y="195">Authenticated</text><text x="132" y="219">applications</text>
+<rect x="275" y="160" width="195" height="90" rx="12" fill="#dce8fa" stroke="#6482b4"/><text x="372" y="195">Gateway, policy</text><text x="372" y="219">quotas + logging</text>
+<rect x="525" y="160" width="175" height="90" rx="12" fill="#dce8fa" stroke="#6482b4"/><text x="612" y="207">Model router</text>
+<rect x="770" y="95" width="360" height="80" rx="12" fill="#e2f3e9" stroke="#569e79"/><text x="950" y="130">Approved hosted API</text><text x="950" y="151" font-size="13">Pilot / fallback</text>
+<rect x="770" y="260" width="360" height="95" rx="12" fill="#ffedcf" stroke="#c9923c"/><text x="950" y="298">Private multi-GPU inference</text><text x="950" y="324" font-size="13">Only after compatibility + sizing tests</text>
+<rect x="770" y="415" width="360" height="65" rx="12" fill="#e7e3f6" stroke="#8975ae"/><text x="950" y="452">Pinned, verified model artifacts</text>
+</g><g stroke="#52657f" stroke-width="3" fill="none"><path d="M220 205H275"/><path d="M470 205H525"/><path d="M700 205H735V135H770"/><path d="M735 205V307H770"/><path d="M950 415V355"/></g><g fill="#52657f"><path d="M275 205l-11 -7v14zM525 205l-11 -7v14zM770 135l-11 -7v14zM770 307l-11 -7v14zM950 355l-7 11h14z"/></g><text x="48" y="493" font-family="Arial" font-size="14" fill="#556477">Conceptual trust boundaries only. No verified hardware count, runtime performance or production deployment implied.</text></svg>
